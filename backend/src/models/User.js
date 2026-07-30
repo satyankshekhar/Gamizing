@@ -18,15 +18,10 @@ const userSchema = new mongoose.Schema({
   timestamps: true
 });
 
-userSchema.pre('save', async function(next) {
-  if (!this.isModified('passwordHash')) return next();
-  try {
-    const salt = await bcrypt.genSalt(env.bcryptSaltRounds);
-    this.passwordHash = await bcrypt.hash(this.passwordHash, salt);
-    next();
-  } catch (error) {
-    next(error);
-  }
+userSchema.pre('save', async function() {
+  if (!this.isModified('passwordHash')) return;
+  const salt = await bcrypt.genSalt(env.bcryptSaltRounds);
+  this.passwordHash = await bcrypt.hash(this.passwordHash, salt);
 });
 
 userSchema.methods.comparePassword = async function(candidatePassword) {
