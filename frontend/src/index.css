@@ -1,127 +1,30 @@
-:root {
-  /* Light Mode Colors */
-  --color-primary-accent: #F97316;
-  --color-secondary-accent: #FB923C;
-  --color-bg-main: #FFFFFF;
-  --color-bg-secondary: #F8FAFC;
-  --color-bg-card: #FFF7ED;
-  --color-text-primary: #1F2937;
-  --color-text-secondary: #64748B;
-  --color-text-muted: #94A3B8;
-  --color-border: #E5E7EB;
-  --color-hover-state: #FED7AA;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  /* Global Properties */
-  --border-radius-base: 12px;
-  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-elevated: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-  
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    /* Dark Mode Colors */
-    --color-primary-accent: #F97316;
-    --color-secondary-accent: #FB923C;
-    --color-bg-main: #0B0B0B;
-    --color-bg-secondary: #141414;
-    --color-bg-card: #1E1E1E;
-    --color-text-primary: #F8FAFC;
-    --color-text-secondary: #CBD5E1;
-    --color-text-muted: #94A3B8;
-    --color-border: #2A2A2A;
-    --color-hover-state: rgba(249, 115, 22, 0.18);
+    --bg-main: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --bg-card: #FFF7ED;
+    --text-primary: #1F2937;
+    --text-secondary: #64748B;
+    --text-muted: #94A3B8;
+    --border-color: #E5E7EB;
+  }
 
-    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
-    --shadow-elevated: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  .dark {
+    --bg-main: #0B0B0B;
+    --bg-secondary: #141414;
+    --bg-card: #1E1E1E;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --border-color: #2A2A2A;
   }
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: var(--color-bg-main);
-  color: var(--color-text-primary);
+  @apply bg-[var(--bg-main)] text-[var(--text-primary)] transition-colors duration-300;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-a {
-  color: var(--color-primary-accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--color-secondary-accent);
-}
-
-/* Base button styles */
-button, .btn {
-  background-color: var(--color-primary-accent);
-  color: #FFFFFF;
-  border: none;
-  border-radius: var(--border-radius-base);
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-soft);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-button:hover, .btn:hover {
-  background-color: var(--color-secondary-accent);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-elevated);
-}
-
-button.secondary, .btn.secondary {
-  background-color: transparent;
-  color: var(--color-primary-accent);
-  border: 1px solid var(--color-border);
-  box-shadow: none;
-}
-
-button.secondary:hover, .btn.secondary:hover {
-  background-color: var(--color-hover-state);
-  border-color: var(--color-primary-accent);
-}
-
-/* Card styles */
-.card {
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-base);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-soft);
-  transition: all 0.2s ease;
-}
-
-.card:hover {
-  box-shadow: var(--shadow-elevated);
-  transform: translateY(-2px);
-}
-
-/* Utilities */
-.text-primary { color: var(--color-text-primary); }
-.text-secondary { color: var(--color-text-secondary); }
-.text-muted { color: var(--color-text-muted); }
-.text-accent { color: var(--color-primary-accent); }
-
-.bg-main { background-color: var(--color-bg-main); }
-.bg-secondary { background-color: var(--color-bg-secondary); }
+}\n
