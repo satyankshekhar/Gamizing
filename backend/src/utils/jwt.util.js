@@ -21,4 +21,4 @@ const generateRefreshToken = (user) => {
 module.exports = {
   generateAccessToken,
   generateRefreshToken
-};\n
+};

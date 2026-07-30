@@ -8,4 +8,4 @@ router.get('/health', (req, res) => {
 
 router.use('/auth', authRoutes);
 
-module.exports = router;\n
+module.exports = router;

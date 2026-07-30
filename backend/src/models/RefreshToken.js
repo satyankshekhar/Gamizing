@@ -19,4 +19,4 @@ refreshTokenSchema.virtual('isExpired').get(function() {
   return Date.now() >= this.expiresAt;
 });
 
-module.exports = mongoose.model('RefreshToken', refreshTokenSchema);\n
+module.exports = mongoose.model('RefreshToken', refreshTokenSchema);

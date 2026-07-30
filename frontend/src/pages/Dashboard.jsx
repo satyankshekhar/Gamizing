@@ -29,4 +29,4 @@ export default function Dashboard() {
       </motion.div>
     </div>
   );
-}\n
+}

@@ -102,4 +102,4 @@ module.exports = {
   loginUser,
   refreshAuthToken,
   logoutUser
-};\n
+};

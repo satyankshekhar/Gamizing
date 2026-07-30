@@ -88,4 +88,4 @@ module.exports = {
   refresh,
   logout,
   getMe
-};\n
+};

@@ -27,4 +27,4 @@ export default function Landing() {
       </motion.div>
     </div>
   );
-}\n
+}

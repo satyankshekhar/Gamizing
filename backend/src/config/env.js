@@ -13,4 +13,4 @@ module.exports = {
   clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
   bcryptSaltRounds: parseInt(process.env.BCRYPT_SALT_ROUNDS, 10) || 12,
   nodeEnv: process.env.NODE_ENV || 'development'
-};\n
+};
